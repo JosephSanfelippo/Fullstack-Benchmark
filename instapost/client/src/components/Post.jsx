@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import axios from 'axios';
 
 const maxChar = 145;
 
@@ -8,11 +9,25 @@ class Post extends React.Component {
     super(props);
     this.state = {
       body: props.posts.body,
-      isOpen: false
+      isOpen: false,
+      likes: props.posts.likes
     };
     this.toggle = this.toggle.bind(this);
     this.showChars = this.showChars.bind(this);
     this.paraSplitter = this.paraSplitter.bind(this);
+    this.addLike = this.addLike.bind(this);
+  }
+
+  addLike() {
+    axios.patch('/api/posts/' + this.props.posts._id)
+      .then(res => {
+        this.setState({ likes: res.data.likes });
+
+      })
+      .catch(err => {
+        console.log('client PATCH failed', err);
+        res.send(err);
+      });
   }
 
   toggle() {
@@ -29,9 +44,10 @@ class Post extends React.Component {
 
 
   paraSplitter () {
+
     var postBody = this.showChars();
     var splitBody = postBody.split('\n');
-    console.log('sb', splitBody);
+
     return splitBody;
   }
 
@@ -53,9 +69,9 @@ class Post extends React.Component {
         <div className='post__image'>
           <img src={this.props.posts.imageUrl} />
         </div>
-        {this.paraSplitter().map(par => {
+        {this.paraSplitter().map((par, index) => {
           return (
-            <p>
+            <p key={index}>
               {par}
             </p>
           );
@@ -66,9 +82,9 @@ class Post extends React.Component {
           </button>
         </div>
         <div className='post__actions'>
-          <div className='post__likes'>Likes: {this.props.posts.likes} </div>
+          <div className='post__likes'>Likes: {this.state.likes} </div>
           <div className='post__buttons'>
-            <button>Like</button>
+            <button onClick={this.addLike}>Like</button>
             <button>Comment</button>
           </div>
         </div>

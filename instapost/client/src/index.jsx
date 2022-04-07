@@ -22,7 +22,6 @@ class App extends React.Component {
       .then(data => {
         console.log('client GET success!');
         let posts = data.data;
-        console.log('posts client', posts);
         this.setState({posts});
       })
       .catch(err => {

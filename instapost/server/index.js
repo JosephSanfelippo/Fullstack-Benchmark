@@ -14,6 +14,10 @@ const getAllPosts = function() {
   return Post.find();
 };
 
+const getPostById = function(postId) {
+  return Post.findOneAndUpdate({_id: postId}, {$inc: {likes: 1}}, {new: true});
+};
+
 
 app.get('/api/posts', function(req, res) {
   getAllPosts()
@@ -23,6 +27,17 @@ app.get('/api/posts', function(req, res) {
     })
     .catch(err => {
       console.log('server GET fail!', err);
+      res.status(500).send(err);
+    });
+});
+
+app.patch('/api/posts/:postId', function(req, res) {
+  getPostById(req.params.postId)
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      console.log('patch GET failed', err);
       res.status(500).send(err);
     });
 });

@@ -9,8 +9,8 @@ mongoose.connect(mongoUri, {
 
 const db = mongoose.connection;
 
-db.once("connected", function(){
-  console.log("Mongodb connected...");
-})
+db.once('connected', function() {
+  console.log('Mongodb connected...');
+});
 
 module.exports = db;

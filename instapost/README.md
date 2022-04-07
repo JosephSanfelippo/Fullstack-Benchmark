@@ -96,10 +96,10 @@ HOW TO START THIS APP
 
 **Implement these user stories by doing the following:**
 
-- [ ] In your Express server, create a request handler that will respond to a `PATCH` request to the route `/api/posts/:postId`. Your request handler should find the post in the database with the corresponding `_id`, then increment that post's `like` counter.
+- [x] In your Express server, create a request handler that will respond to a `PATCH` request to the route `/api/posts/:postId`. Your request handler should find the post in the database with the corresponding `_id`, then increment that post's `like` counter.
   - Use Express' `route parameters` to get the `postId` out of your request URL.
-- [ ] Refactor your `Post` component to include a _click_ event listener on the like button.
-- [ ] Within the event handler you created send a `PATCH` request to the route `/api/posts/:postId`.
+- [x] Refactor your `Post` component to include a _click_ event listener on the like button.
+- [x] Within the event handler you created send a `PATCH` request to the route `/api/posts/:postId`.
   - on success of the request, increment the post's count for immediate feedback to the user.
 
 **WHEN THIS STEP IS COMPLETE:** please make a commit with the message "complete step three"
