@@ -10,9 +10,21 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static(__dirname + '/../client/dist'));
 
+const getAllPosts = function() {
+  return Post.find();
+};
+
 
 app.get('/api/posts', function(req, res) {
-  // TODO - your code here!
+  getAllPosts()
+    .then(data => {
+      console.log('server GET success!');
+      res.send(data);
+    })
+    .catch(err => {
+      console.log('server GET fail!', err);
+      res.status(500).send(err);
+    });
 });
 
 app.listen(PORT, () => {

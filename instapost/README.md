@@ -60,12 +60,12 @@ HOW TO START THIS APP
 
 **Implement this user story by doing the following:**
 
-- [ ] In the Express server `server/index.js`, complete the request handler that will respond to `GET` requests to `/api/posts` with JSON of the posts stored in the database. You should use the Mongoose model exported by `Post.js` to fetch all of the posts from the database.
-- [ ] Make an AJAX request from your client to the `/api/posts` route of your server when the App (or Feed) component gets loaded. Replace the sample data in your client with data obtained from your server.
-- [ ] Refactor the **Feed** component to dynamically render the data from your api.
+- [x] In the Express server `server/index.js`, complete the request handler that will respond to `GET` requests to `/api/posts` with JSON of the posts stored in the database. You should use the Mongoose model exported by `Post.js` to fetch all of the posts from the database.
+- [x] Make an AJAX request from your client to the `/api/posts` route of your server when the App (or Feed) component gets loaded. Replace the sample data in your client with data obtained from your server.
+- [x] Refactor the **Feed** component to dynamically render the data from your api.
   - Leverage the existing **Post** component with the data you requested.
-- [ ] Use the [Moment.js](https://momentjs.com) library to display the post dates using relative time - for example, "21 hours ago" or "10 minutes ago."
-- [ ] Ensure that the posts in your feed appear in reverse-chronological order (with the most recent post appearing first in the feed.)
+- [x] Use the [Moment.js](https://momentjs.com) library to display the post dates using relative time - for example, "21 hours ago" or "10 minutes ago."
+- [x] Ensure that the posts in your feed appear in reverse-chronological order (with the most recent post appearing first in the feed.)
 
 **WHEN THIS STEP IS COMPLETE:** please make a commit with the message "complete step one"
 

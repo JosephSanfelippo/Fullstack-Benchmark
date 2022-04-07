@@ -1,14 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-
+import axios from 'axios';
 import Feed from './components/Feed.jsx';
 
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {}
+    this.state = {
+      posts: []
+    };
   }
+
+  componentDidMount() {
+    console.log('index.jsx MOUNT success!');
+    this.getPosts();
+  }
+
+  getPosts() {
+    axios.get('/api/posts')
+      .then(data => {
+        console.log('client GET success!');
+        let posts = data.data;
+        console.log('posts client', posts);
+        this.setState({posts});
+      })
+      .catch(err => {
+        console.log('client GET failed!', err);
+        res.send(err);
+      });
+  }
+
 
   render() {
     return (
@@ -20,7 +42,7 @@ class App extends React.Component {
         </div>
 
         <div className="main">
-          <Feed />
+          <Feed posts={this.state.posts} />
         </div>
       </div>
     );
