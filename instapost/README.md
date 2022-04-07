@@ -32,6 +32,17 @@ HOW TO START THIS APP
 
 - _[Modify this section to tell graders how to start your app]_
 
+1. Navigate to FULLSTACk-BENCHMARK directory
+2. Navigate to Instapost directory
+3. Run "code ." in terminal to open in vscode
+4. Open terminal in VScode
+5. Run "npm install"
+6. run "npm start"
+7. Open 2 new windows in vscode terminal
+8. Run "dev:react" in first new terminal window
+9. Run "db:setup" in second new terminal
+10. Open browser and navigate to "localhost:3000"
+
 **Commit frequently** with informative messages. While there are instructions to commit at the end of each step, these should not be your only commits.
 
 ---
@@ -40,13 +51,13 @@ HOW TO START THIS APP
 
 **Complete these setup tasks**
 
-- [ ] In your terminal, navigate to this assessment's `instapost` directory.
-- [ ] Run `npm install` inside the `instapost` directory to install dependencies.
-- [ ] Ensure that the MongoDB process is running on your computer (`mongod`).
-- [ ] Create the database by running `npm run db:setup`
-- [ ] In `server/index.js`, uncomment the lines of code corresponding to your choice of client-side framework.
-- [ ] Start your application with two commands, `npm run dev:react` and `npm start`, in two separate terminal tabs. Our `dev:react` script makes use of Webpack. For more information about Webpack, take a look at [the Webpack Docs](https://webpack.js.org/concepts/).
-- [ ] Study the given codebase before beginning the steps below. Consider what's been provided to you, what you'll need to refactor, and what you'll need to create as you work through the steps below.
+- [x] In your terminal, navigate to this assessment's `instapost` directory.
+- [x] Run `npm install` inside the `instapost` directory to install dependencies.
+- [x] Ensure that the MongoDB process is running on your computer (`mongod`).
+- [x] Create the database by running `npm run db:setup`
+- [x] In `server/index.js`, uncomment the lines of code corresponding to your choice of client-side framework.
+- [x] Start your application with two commands, `npm run dev:react` and `npm start`, in two separate terminal tabs. Our `dev:react` script makes use of Webpack. For more information about Webpack, take a look at [the Webpack Docs](https://webpack.js.org/concepts/).
+- [x] Study the given codebase before beginning the steps below. Consider what's been provided to you, what you'll need to refactor, and what you'll need to create as you work through the steps below.
 
 **WHEN THESE TASKS ARE COMPLETE:** proceed to Step One.
 
