@@ -79,10 +79,10 @@ HOW TO START THIS APP
 
 **Implement this user story by doing the following:**
 
-- [ ] Truncate the length of all posts to a _max of 144 characters_
-  - [ ] If a post is more than 144 characters provide a **Show More** button that will toggle the display of the content
-  - [ ] If a post is less than 144 characters do not add a show more button and display all content
-- [ ] Ensure that your `Post` properly displays the post as a series of paragraphs.
+- [x] Truncate the length of all posts to a _max of 144 characters_
+  - [x] If a post is more than 144 characters provide a **Show More** button that will toggle the display of the content
+  - [x] If a post is less than 144 characters do not add a show more button and display all content
+- [x] Ensure that your `Post` properly displays the post as a series of paragraphs.
 
 **WHEN THIS STEP IS COMPLETE:** please make a commit with the message "complete step two"
 

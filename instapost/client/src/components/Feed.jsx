@@ -5,7 +5,6 @@ import Post from './Post.jsx';
 const Feed = (props) => {
 
   const allPosts = props.posts;
-  console.log('ap', allPosts);
 
   allPosts.sort((firstPost, secondPost) => {
 
