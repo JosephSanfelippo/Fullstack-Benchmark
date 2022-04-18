@@ -13,9 +13,6 @@ const Feed = (props) => {
 
   return (
     <div className='feed'>
-      {/* section for post form */}
-
-      {/* section for all posts */}
       {allPosts.map((post, index) =>
         <Post key={index}
           posts={post}/>

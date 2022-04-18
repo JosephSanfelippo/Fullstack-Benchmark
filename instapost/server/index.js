@@ -11,11 +11,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/../client/dist'));
 
 const getAllPosts = function() {
-  return Post.find();
+  return Post.find({});
 };
 
 const getPostById = function(postId) {
-  return Post.findOneAndUpdate({_id: postId}, {$inc: {likes: 1}}, {new: true});
+  return Post.findByIdAndUpdate(postId, {$inc: {likes: 1}}, {new: true});
 };
 
 
@@ -27,7 +27,7 @@ app.get('/api/posts', function(req, res) {
     })
     .catch(err => {
       console.log('server GET fail!', err);
-      res.status(500).send(err);
+      res.status(502).send(err);
     });
 });
 
@@ -38,7 +38,7 @@ app.patch('/api/posts/:postId', function(req, res) {
     })
     .catch(err => {
       console.log('patch GET failed', err);
-      res.status(500).send(err);
+      res.status(502).send(err);
     });
 });
 

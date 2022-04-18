@@ -1,11 +1,11 @@
 Please take the time to reflect on how you feel you did on the following concepts.
 
 Q: How do you feel about your understanding of the client server relationship? What blind spots do you feel you have about the connection between these two?
-A:
+A: I feel very confident in this aspect.
 
 Q: How do you feel on your ability to create route handlers server side? I.E. Get route for retrieveing documents, Post route for creating documents. What blind spots do you feel you have about this concept?
-A:
+A:I had difficulty with the patch request only because I had never made one before, but now I feel I have a better understanding of how they work.
 
 Q: How do you feel on your ability to query your database using proper model methods? I.E Todo.find() or Todo.create(). What blind spots do you feel you have about this concept?
-A:
+A:I feel confident in this area
 

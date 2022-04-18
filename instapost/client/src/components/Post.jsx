@@ -8,14 +8,17 @@ class Post extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      body: props.posts.body,
       isOpen: false,
-      likes: props.posts.likes
+      likes: null
     };
     this.toggle = this.toggle.bind(this);
     this.showChars = this.showChars.bind(this);
     this.paraSplitter = this.paraSplitter.bind(this);
     this.addLike = this.addLike.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({likes: this.props.posts.likes});
   }
 
   addLike() {
@@ -26,7 +29,7 @@ class Post extends React.Component {
       })
       .catch(err => {
         console.log('client PATCH failed', err);
-        res.send(err);
+        // res.send(err);
       });
   }
 
@@ -39,7 +42,7 @@ class Post extends React.Component {
     if (this.state.isOpen) {
       return this.props.posts.body;
     }
-    return this.state.body.slice(0, maxChar) + '...';
+    return this.props.posts.body.slice(0, maxChar) + '...';
   }
 
 
