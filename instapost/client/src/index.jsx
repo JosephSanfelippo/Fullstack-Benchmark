@@ -26,7 +26,6 @@ class App extends React.Component {
       })
       .catch(err => {
         console.log('client GET failed!', err);
-        // res.send(err);
       });
   }
 

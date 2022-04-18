@@ -2,6 +2,7 @@ const express = require('express');
 
 const Post = require('../database/Post.js');
 
+
 const app = express();
 const PORT = 3000;
 
@@ -10,14 +11,15 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static(__dirname + '/../client/dist'));
 
-const getAllPosts = function() {
+
+
+getAllPosts = function() {
   return Post.find({});
 };
 
-const getPostById = function(postId) {
+getPostById = function(postId) {
   return Post.findByIdAndUpdate(postId, {$inc: {likes: 1}}, {new: true});
 };
-
 
 app.get('/api/posts', function(req, res) {
   getAllPosts()
@@ -27,7 +29,7 @@ app.get('/api/posts', function(req, res) {
     })
     .catch(err => {
       console.log('server GET fail!', err);
-      res.status(502).send(err);
+      res.status(502).send('bad gateway');
     });
 });
 
@@ -38,7 +40,7 @@ app.patch('/api/posts/:postId', function(req, res) {
     })
     .catch(err => {
       console.log('patch GET failed', err);
-      res.status(502).send(err);
+      res.status(502).send('bad gateway');
     });
 });
 
